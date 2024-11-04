@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <title>Calculadora de Herbicidas</title>
+    <style>
+        body {
+            background-image: url(Tecnologia-1.jpg); /* Link da imagem do fundo */
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: rgb(231, 234, 225);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: rgba(41, 139, 67, 0.888); /* Cor verde com opacidade */
+            padding: 5px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 50%;
+            text-align: center;
+            font-size: 18px;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            width: 50vh;
+            font-size: 25px;
+            text-align: center;
+        }
+        button {
+            background-color: darkgreen;
+            color: white;
+        }
+
+       
+    </style>
+</head>
+<body>
+    
+    <div class="container">      
+                     
+        <h2>Calculadora de Herbicidas</h2>       
+        <label for="area">Área Aplicação (hectares):</label>
+        <input type="number" id="area" placeholder=""><br>
+        
+        <label for="dose">Dose Recomendada (litros/hectare):</label>
+        <input type="number" id="dose" placeholder=""><br>
+        
+        <label for="velocidade">Velocidade do Trator (km/h):</label>
+        <input type="number" id="velocidade" placeholder=""><br>
+        
+        <label for="bicos">Quantidade de Bicos:</label>
+        <input type="number" id="bicos" placeholder=""><br>
+        
+        <label for="capacidade">Capacidade do Tanque (litros):</label>
+        <input type="number" id="capacidade" placeholder=""><br>
+
+        <label for="lote">Fazenda / Lote:</label>
+        <input type="text" id="lote" placeholder=""><br>
+        
+        <label for="ra">Recomendação Agronômica (RA):</label>
+        <input type="text" id="ra" placeholder=""><br>
+        
+        <button onclick="calcular()">Calcular</button>
+        
+        <p id="resultado"></p>
+        <a href="index.html">Tela Cadastro</a>
+    </div>
+
+    <script>
+        function calcular() {
+            var area = document.getElementById('area').value;
+            var dose = document.getElementById('dose').value;
+            var velocidade = document.getElementById('velocidade').value;
+            var bicos = document.getElementById('bicos').value;
+            var capacidade = document.getElementById('capacidade').value;
+
+            var totalHerbicida = area * dose;
+            var tanquesNecessarios = Math.ceil(totalHerbicida / capacidade);
+            var tempoEstimadoHoras = area / (velocidade * bicos);
+            var horas = Math.floor(tempoEstimadoHoras);
+            var minutos = Math.round((tempoEstimadoHoras - horas) * 60);
+
+            var litros30Segundos = (dose / velocidade / bicos) * 0.5; // Litros por 30 segundos
+            var litros60Segundos = (dose / velocidade / bicos); // Litros por 60 segundos
+
+            document.getElementById('resultado').innerText = 
+                'Lote: ' + document.getElementById('lote').value + '\n' +
+                'Recomendação Agronômica (RA): ' + document.getElementById('ra').value + '\n' +
+                'Total de herbicida necessário: ' + totalHerbicida + ' litros\n' + 
+                'Tanques necessários: ' + tanquesNecessarios + ' Unidades\n' + 
+                'Estimativa de Horas de Trabalho: ' + horas + ' horas e ' + minutos + ' minutos\n' +
+                'Tempo estimado por bico (30 seg): ' + litros30Segundos.toFixed(2) + ' litros\n' +
+                'Tempo estimado por bico (60 seg): ' + litros60Segundos.toFixed(2) + ' litros';
+        }
+    </script>
+</body>
+</html>

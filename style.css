@@ -1,0 +1,207 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit',sans-serif;
+    
+    }
+
+    Body{
+        height: 100vh;
+
+    }
+
+    nav.menu-lateral{
+        width: 80px;
+        height: 100%;
+        background-color: #07420f;
+        padding: 40px 0 40px 1%;
+        box-shadow: 6px 0 0 #699780;
+       
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        transition: .2s;
+    }
+
+    nav.menu-lateral:hover{
+        width: 300px;
+    }
+
+    nav.menu-lateral.expandir{
+        width: 90px;
+
+    }
+
+    .btn-expandir{
+        width: 100%;
+        padding-left: 10px;
+
+    }
+
+    .btn-expandir > i{
+        color: #e9f1ef;
+        font-size: 34px;
+        cursor: pointer;
+
+    }
+
+    ul{
+        height: 100%;
+        list-style-type: none;
+
+    }
+
+
+    ul li.item-menu{
+        transition: .5s ;
+    }
+
+    ul li.ativo{
+        background-color: #1d811d;
+
+    }
+
+
+
+    ul li.item-menu:hover{
+        background: #9ddac5;
+    }
+
+    
+    ul li.item-menu a{
+        color: #f7f8f7;
+        text-decoration: none;
+        font-size: 20px;
+        padding: 20px 4%;
+        display:  flex;
+        margin-bottom: 3px;
+        line-height: 40px;
+        
+    }
+
+    ul li.item-menu a .txt-link{
+        margin-left: 60px;
+        transition: .8S;
+        opacity: 10;
+
+
+    }
+
+
+    nav.menu-lateral.expandir .txt-link{
+        margin-left: 30PX;
+        transition: .2S;
+        opacity: 0;
+
+
+    }
+
+    ul li.item-menu a .icon > i{
+        font-size: 25px ;
+        margin-left: 10px;
+        
+    }
+
+
+    /* Estilo geral do menu lateral */
+.menu-lateral {
+    width: 16%;
+    background-color: #145a29;
+    color: #fff;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    flex-direction: row-reverse;
+   
+}
+
+.menu-lateral ul {
+    padding: 3%;
+    margin: 0;
+}
+
+.menu-lateral ul li a{
+    display: block;
+    width: 83%;
+
+
+}
+
+.item-menu {
+    position: relative;
+}
+
+.item-menu a {
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    padding: 22px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.item-menu a:hover {
+    background-color: #3d9632;
+}
+   
+
+.icon {
+    margin-right: 10px;
+}
+/* Estilo para os submenus */
+.menu-lateral ul ul.submenu {
+    display: block;
+    position: absolute;
+    left: 102%;
+    top: 0;
+    background-color: #1c5f1c;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.menu-lateral ul ul.submenu li {
+    display: block;
+}
+
+.menu-lateral ul ul.submenu a {
+    padding: 15px;
+    color: white;
+    text-decoration: block;
+}
+
+.menu-lateral ul ul.submenu a:hover {
+    background-color: #46b11c;
+    
+   
+}
+
+.menu-lateral li:hover > ul.submenu {
+    display: block;
+}
+
+/* Estilo para o botão de expandir */
+.btn-expandir {
+    padding: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+    background-color: #145a29;
+    text-align: left;
+}
+
+.btn-expandir:hover {
+    background-color: #40972d;
+}
+  

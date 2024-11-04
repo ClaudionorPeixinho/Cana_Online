@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Vertical com Drop-downs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            background: url('tela 02.jpg') no-repeat center center fixed; 
+            background-size: cover;
+        }
+        .navbar {
+            width: 280px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: #2e8b57; /* Verde escuro */
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 120px;
+            z-index: 1;
+        }
+        .navbar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: #3a9d70;
+        }
+        .dropdown-container {
+            display: none;
+            background-color: #3a9d70;
+            padding-left: 15px;
+        }
+        .dropdown .dropbtn {
+            font-size: 20px; 
+            border: none;
+            outline: none;
+            color: white;
+            padding: 25px 50px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+            width: 100%;
+            text-align: left;
+        }
+        .dropdown .dropbtn:hover {
+            background-color: #3a9d70;
+        }
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            left: 250px;
+            background-color: #2e8b57;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            z-index: 2;
+            transition: left 0.5s;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 15px;
+        }
+        @media screen and (max-width: 768px) {
+            .navbar {
+                left: -220px;
+                width: 0;
+            }
+            .navbar.open {
+                left: 0;
+                width: 220px;
+            }
+            .toggle-btn {
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+ <center>
+
+        <h1>Cana Online - Apontamentos Digitais</h1>
+     
+           
+        </center>
+   
+      
+         
+    <button class="toggle-btn" onclick="toggleMenu()">☰ Menu</button>
+    <div class="navbar" id="navbar">
+        <a href="#home"><i class="fas fa-home"></i> Home</a>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown('homeDropdown')"><i class="fas fa-clock"></i> Ponto Digital <i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-container" id="homeDropdown">
+                <a href="pontodigital.html">Consultar Ponto</a>
+                <a href="Consultar.html">Consultar Colaborador</a>
+                <a href="./PI - CanaOnline.pbix" target="_blank">Relatórios Gerenciais</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown('servicesDropdown')"><i class="fas fa-file-alt"></i> Cadastro <i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-container" id="servicesDropdown">
+                <a href="colaboradores.html">Colaboradores</a>
+                <a href="equipamentos.html">Equipamentos</a>
+                <a href="#">Produtos e Peças</a>
+                <a href="https://www.dji.com/br/dji-terra/info">Drones</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown('mechanizedDropdown')"><i class="fas fa-tractor"></i> Apontamentos Mecanizados <i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-container" id="mechanizedDropdown">
+                <a href="apontamentos2.html">Sistema Mecanizado</a>
+                <a href="#">Plantio em Geral</a>
+                <a href="#">Pulverização</a>
+                <a href="calculadoradecampo.html">Calculadora Campo</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown('dataDropdown')"><i class="fas fa-database"></i> Consultar Dados <i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-container" id="dataDropdown">
+                <a href="equipamentos.html">Equipamentos</a>
+                <a href="colaboradores.html">Colaboradores</a>
+                <a href="https://volvoconnect.com/login?redirect_uri=https://volvoconnect.com/&error=coreautherror:not_logged_in">Volvo Conect</a>
+                <a href="https://operationscenter.deere.com/">Operations Center (JD)</a>
+                <a href="https://www.gnssplanning.com/#/charts">GNSS Online(Trimble)</a>
+                <a href="https://www.climatempo.com.br/">Previsão do Tempo</a>
+
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown('settingsDropdown')"><i class="fas fa-cogs"></i> Configurações <i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-container" id="settingsDropdown">
+                <a href="#">Painel</a>
+                <a href="#">Usuários</a>
+            </div>
+        </div>
+        <a href="#sair"><i class="fas fa-sign-out-alt"></i> Sair</a>
+    </div>
+
+    <br>
+     <br>
+      <br>
+       <br>
+
+    
+    </div>
+    <script>
+        function toggleMenu() {
+            var navbar = document.getElementById("navbar");
+            var toggleBtn = document.querySelector(".toggle-btn");
+            navbar.classList.toggle("open");
+            if (navbar.classList.contains("open")) {
+                toggleBtn.style.left = "250px";
+            } else {
+                toggleBtn.style.left = "20px";
+            }
+        }
+        function toggleDropdown(id) {
+            var dropdown = document.getElementById(id);
+            dropdown.classList.toggle("show");
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>

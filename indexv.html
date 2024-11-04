@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Vertical com Drop-downs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .center-align {
+            text-align: center;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .navbar {
+            width: 380px;
+            background-color: #2e8b57; /* Verde escuro */
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+        }
+        .navbar a, .dropdown-btn {
+            padding: 34px;
+            text-decoration: none;
+            font-size: 27px;
+            color: white;
+            display: block;
+            text-align: left;
+            border: none;
+            background: none;
+            width: 90%;
+            cursor: pointer;
+            outline: none;
+        }
+        .navbar a:hover, .dropdown-btn:hover {
+            background-color: #1f6646;
+        }
+        .dropdown-container {
+            display: none;
+            background-color: #3a9d70;
+            padding-left: 8px;
+        }
+        .content {
+            margin-left: 350px;
+            padding: 23px;
+            background-image: url('./img/tecnologia-campo (1).jpg'); /* Imagem gratuita de domínio público */
+            background-size: cover;
+            background-position: right;
+            height: 80vh;
+        }
+        .marquee {
+            width: 100%;
+            background-color: #2e8b57; /* Verde escuro */
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 28px;
+            white-space: nowrap;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .marquee span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 15s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#home"><i class="fas fa-home"></i> Home</a>
+        <button class="dropdown-btn"><i class="fas fa-clock"></i> Ponto Digital
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="pontodigital.html">Consultar Ponto</a>
+            <a href="Consultar.html">Consultar Colaborador</a>
+            <a href="file:///C:/xampp/htdocs/Relatórios Gerenciais" target="_blank">Relatórios Gerenciais</a>
+        </div>
+        <button class="dropdown-btn"><i class="fas fa-file-alt"></i> Cadastro
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="colaboradores.html">Colaboradores</a>
+            <a href="equipamentos.html">Equipamentos</a>
+            <a href="#">Produtos e Peças</a>
+            <a href="https://www.dji.com/br/dji-terra/info">Drones</a>
+        </div>
+        <button class="dropdown-btn"><i class="fas fa-tractor"></i> Apontamentos Mecanizados
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="apontamentos.html">Sistema Mecanizada</a>
+            <a href="#">Plantio em Geral</a>
+            <a href="#">Pulverização</a>
+            <a href="calculadoradecampo.html">Calculadora de Campo</a>
+        </div>
+        <button class="dropdown-btn"><i class="fas fa-database"></i> Consultar Dados
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="equipamentos.html">Equipamentos</a>
+            <a href="colaboradores.html">Colaboradores</a>
+            <a href="https://volvoconnect.com/login?redirect_uri=https://volvoconnect.com/&error=coreautherror:not_logged_in">Volvo Conect</a>
+            <a href="https://operationscenter.deere.com/">Operations Center (JD)</a>
+            <a href="https://www.gnssplanning.com/#/charts">GNSS Online(Trimble)</a>
+        </div>
+        <button class="dropdown-btn"><i class="fas fa-cogs"></i> Configurações
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">Painel</a>
+            <a href="#">Usuários</a>
+        </div>
+        <a href="#sair"><i class="fas fa-sign-out-alt"></i> Sair</a>
+    </div>
+    <div class="content"></div>
+    <div class="center-align">
+        <span><h1>CanaOnline - A Tecnologia em suas mãos!</h1></span>
+    </div>
+    <div class="marquee">
+        <span>O Agro não Para - CanaOnline</span>
+    </div>
+    <script>
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

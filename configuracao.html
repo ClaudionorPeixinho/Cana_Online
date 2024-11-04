@@ -1,0 +1,98 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+
+  <title>Cana Online na WEB</title>
+
+  <!-- Adicionando Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Adicionando Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+
+
+  <?php
+  if (isset($_SESSION['msg'])) {
+    echo $_SESSION['msg'];
+    unset($_SESSION['msg']);
+  }
+
+  ?>
+
+  <style>
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      background-color: #198754;
+      /* Cor verde escuro */
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 58px;
+      /* Altura da navbar */
+      left: 0;
+      height: calc(100vh - 58px);
+      /* Altura total - altura da navbar */
+      width: 200px;
+      padding: 10px;
+      background-color: #f8f9fa;
+      border-right: 2px solid #dee2e6;
+    }
+
+    .content {
+      margin-top: 70px;
+      /* Altura da navbar */
+      margin-left: 40px;
+      padding: 10px;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+
+    img {
+      width: 100%;
+      height: 100PX;
+
+
+    }
+
+    
+  </style>
+
+
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-dark bg-success">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Cana Online na WEB- Soluções Inteligentes</a>
+      <a href="index.html"><i class="bi bi-pencil-square"></i></a></span>
+     
+    </div>
+  </nav>
+  
+
+
+  <!-- Conteúdo da Página -->
+  <div class="content"> 
+
+  <h3>em desenvolvimento Opção "Configuração"......</h3>
+
+
+
+    </body>

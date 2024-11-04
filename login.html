@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <!-- Adicionando Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-image: url('banner_fundo2.jpg');
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .login-container {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        max-width: 400px;
+        width: 100%;
+        text-align: center;
+      }
+
+      /* Adicionando estilo ao botão de login */
+      .login-btn {
+        background-color: #198754;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        width: 100%;
+        cursor: pointer;
+      }
+
+      /* Adicionando estilo ao botão de login quando hover */
+      .login-btn:hover {
+        background-color: #157347;
+      }
+
+    
+
+    </style>
+  </head>
+  <body>
+    <img src="tela 02.jpg"  width="800"  align="right"alt="Cana Apto">
+   
+
+    <div class="login-container">
+      <h2 class="mb-4">Login</h2>
+      <!-- Adicionando action ao form para redirecionar -->
+      <form method="POST" action="index.html">
+        <!-- Adicionando classes do Bootstrap aos inputs e ao botão -->
+        <div class="mb-3">
+          <input
+            type="email"
+            name="email"
+            class="form-control"
+            placeholder="Email"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <input
+            type="password"
+            name="password"
+            class="form-control"
+            placeholder="Senha"
+            required
+          />
+        </div>
+        <button type="submit" class="btn login-btn">Entrar</button>
+      </form>
+    </div>
+
+    <!-- Adicionando Bootstrap JS no final do body para melhor performance -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
