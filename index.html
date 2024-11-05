@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SideBar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .center {
+            text-align: center;
+        }
+        .navbar {
+            width: 280px;
+            background-color: #2e8b57; /* Verde escuro */
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+            transition: width 0.3s;
+        }
+        .navbar.closed {
+            width: 60px;
+        }
+        .navbar a, .dropdown-btn {
+            padding: 23px;
+            text-decoration: none;
+            font-size: 22px;
+            color: white;
+            display: block;
+            text-align: left;
+            border: none;
+            background: none;
+            cursor: pointer;
+            outline: none;
+        }
+        .navbar a .icon, .dropdown-btn .icon {
+            margin-right: 15px;
+        }
+        .navbar.closed a .txt-link, .navbar.closed .dropdown-btn .txt-link {
+            display: none;
+        }
+        .navbar a:hover, .dropdown-btn:hover {
+            background-color: #3a9d70;
+        }
+        .dropdown-container {
+            display: none;
+            background-color: #3a9d70;
+            padding-left: 6px;
+        }
+        .content {
+            margin-left: 10px;
+            padding: 3px;
+            background-size: cover;
+            background-position: center;
+            height: 5px;
+        }
+        .content img {
+            width: 100%;
+            height: auto;
+        }
+        .content.closed {
+            margin-left: 60px;
+        }
+        .btn-expandir {
+            cursor: pointer;
+            padding: 15px;
+            font-size: 20px;
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            width: auto%;
+            text-align: left;
+           
+        }
+    </style>
+</head>
+<body>
+    <button class="btn-expandir" onclick="toggleNavbar()">☰ Menu</button>
+    <div class="navbar" id="navbar">
+        <a href="#"><i class="bi bi-card-list icon"></i> <span class="txt-link">Home</span></a>
+        <button class="dropdown-btn"><i class="bi bi-display icon"></i> <span class="txt-link">Ponto Digital</span>
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="pontodigital.html">Ponto Digital</a>
+            <a href="#">Consultar Colaborador</a>
+        </div>
+        <button class="dropdown-btn"><i class="bi bi-pencil-square icon"></i> <span class="txt-link">Apontamentos</span>
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="apontamentos2.html">Mecanização</a>
+            <a href="#">Consultar Apontamentos</a>
+        </div>
+        <button class="dropdown-btn"><i class="bi bi-person-vcard icon"></i> <span class="txt-link">Colaboradores</span>
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="colaboradores.html">Cadastro</a>
+            <a href="Consultar_Colaborador.php">Consultar Colaborador</a>
+        </div>
+        <button class="dropdown-btn"><i class="bi bi-truck icon"></i> <span class="txt-link">Equipamentos</span>
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="equipamentos.html">Cadastro</a>
+            <a href="#">Consultar Equipamentos</a>
+        </div>
+        <button class="dropdown-btn"><i class="bi bi-search icon"></i> <span class="txt-link">Links Externos</span>
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/558/saopaulo-sp">Previsão do Tempo</a>
+            <a href="https://volvoconnect.com/login?redirect_uri=https://volvoconnect.com/&error=coreautherror:not_logged_in">Volvo Conect</a>
+            <a href="https://signin.johndeere.com/">Operations Center(JD)</a>
+            <a href="https://www.gnssplanning.com/#/settings">GNSS Trimble (Centilação)</a>
+        </div>
+        <button class="dropdown-btn"><i class="bi bi-gear icon"></i> <span class="txt-link">Aplicações Campo</span>
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="https://joyful-truffle-c3d256.netlify.app/">Pulverização Trator</a>
+            <a href="https://www.dji.com/br">Drones</a>
+            <a href="#">Site Mapa (Relatórios)</a>
+            <a href="https://servicos.decea.mil.br/sarpas/?i=AppSec">Plano de Vôo (DECEA)</a>
+        </div>
+        
+        <a href="#" class="btn-sair" onclick="sair()">
+            <i class="bi bi-box-arrow-right icon"></i> <span class="txt-link">Sair</span>
+        </a>
+    
+        <script>
+            function sair() {
+                window.location.href = "index.html"; // Redireciona para index.html
+            }
+        </script>
+        
+    </div>
+    <div class="content" id="content">
+        <center>
+            <h1>Cana Online - Apontamentos Digitais</h1>
+            <img src="Menu.jpg" alt="Cana Apto">
+        </center>
+    </div>
+    <script>
+        function toggleNavbar() {
+            var navbar = document.getElementById('navbar');
+            var content = document.getElementById('content');
+            navbar.classList.toggle('closed');
+            content.classList.toggle('closed');
+        }
+
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
