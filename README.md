@@ -1,5 +1,9 @@
 # Cana_Online
 
+Novo Layout - Segunda Atualização
+
+
+
 Tela de Apontamentos de Produção.
 
 ![image](https://github.com/ClaudionorPeixinho/CanaOnline/assets/142553468/3bb42c93-51f3-4157-8d19-10ec593a16b6)
