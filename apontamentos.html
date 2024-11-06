@@ -19,7 +19,14 @@ session_start();
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
 
 
- 
+  <?php
+  if (isset($_SESSION['msg'])) {
+    echo $_SESSION['msg'];
+    unset($_SESSION['msg']);
+  }
+
+  ?>
+
   <style>
     .navbar {
       position: fixed;
@@ -84,106 +91,104 @@ session_start();
 
 
 
-        <!-- Conteúdo da Página -->
-        <div class="content">
-          <div id="apontamentoForm" style="display: block">
-            <h2>Apontamentos de Produção</h2>
-            <form>
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="data_lancamento">Data lançamento:</label>
-                    <input type="date" class="form-control" name="data_lancamento"
-                      placeholder="Digite a data da Lançamento" />
-                  </div>
-                  <div class="form-group">
-                    <label for="liberacao"> Liberação:</label>
-                    <input type="text" class="form-control" name="liberacao" placeholder="Digite a Liberação (O.S)" />
-                  </div>
-                  <div class="form-group">
-                    <label for="frotas"> Nº Caminhão:</label>
-                    <input type="text" class="form-control" name="frotas" placeholder="Digite nº Caminhão" />
-                  </div>
-                  <div class="form-group">
-                    <label for="colhedora"> Nº Colhedora:</label>
-                    <input type="text" class="form-control" name="colhedora" placeholder="Digite nº Colhedora" />
-                  </div>
-                  <div class="form-group">
-                    <label for="transbordo"> Nº Transbordo:</label>
-                    <input type="text" class="form-control" name="transbordo" placeholder="Digite nº Transbordo" />
-                  </div>
+       <!-- Conteúdo da Página -->
+       <div class="content">
+        <div id="apontamentoForm" style="display: none">
+          <h2>Apontamentos de Produção</h2>
+          <form>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="data_lancamento">Data lançamento:</label>
+                  <input type="date" class="form-control" name="data_lancamento"
+                    placeholder="Digite a data da Lançamento" />
                 </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="hora_saida"> Hora saída Lavoura:</label>
-                    <input type="time" class="form-control" name="hora_saida"
-                      placeholder="Informe a hora da saída Lavoura" />
-                  </div>
-                  <div class="form-group">
-                    <label for="fazenda">Faz/Lote:</label>
-                    <input type="text" class="form-control" name="fazenda" placeholder="Digite Fazenda e Lote" />
-                  </div>
-                  <div class="form-group">
-                    <label for="motorista"> Motorista:</label>
-                    <input type="text" class="form-control" name="motorista" placeholder="Digite nome Motorista" />
-                  </div>
-                  <div class="form-group">
-                    <label for="operador1"> Operador Colhedora:</label>
-                    <input type="text" class="form-control" name="operador1" placeholder="Digite nome Op.Colhedora" />
-                  </div>
-                  <div class="form-group">
-                    <label for="operador2"> Operador Transbordo:</label>
-                    <input type="text" class="form-control" name="operador2" placeholder="Digite nome Op.Transbordo" />
-                  </div>
+                <div class="form-group">
+                  <label for="liberacao"> Liberação:</label>
+                  <input type="text" class="form-control" name="liberacao" placeholder="Digite a Liberação (O.S)" />
                 </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="lider">Lider:</label>
-                    <input type="text" class="form-control" name="lider"
-                      placeholder="Informe o Lider da Frente" />
-                  </div>
-
-                  <div class="form-group">
-                    <label for="peso_lavoura"> Peso Carga Lavoura:</label>
-                    <input type="text" class="form-control" name="peso_lavoura"
-                      placeholder="Informe Peso Total Carga Lavoura" />
-                  </div>
-                  
-                  <div class="form-group">
-                    <label for="peso_usina">Peso da Carga Usina</label>
-                    <input type="text" class="form-control" name="peso_usina" placeholder=" Informe Peso Total Carga Usina" />
-                  </div>
-    
-                  <div class="form-group">
-                    <label for="turno">Turno</label>
-                    <input type="text" class="form-control" name="turno" placeholder=" Informe Turno (dia/Noite)" />
-                  </div>
-    
-                  <div class="form-group">
-                    <label for="operacao">Tipo Operação:</label>
-                    <input type="text" class="form-control" name="operacao"
-                      placeholder="Informe a Operação (Plantio/Colheita/Pulverização)" />
-                  </div>              
+                <div class="form-group">
+                  <label for="frotas"> Nº Caminhão:</label>
+                  <input type="text" class="form-control" name="frotas" placeholder="Digite nº Caminhão" />
                 </div>
-              </div>                                       
-           
-              <div class="form-group">
-                <label for="informacao"> Informações Adicionais:</label>
-                <input type="text" class="form-control" name="informacao"
-                  placeholder="Anotações de Informações e  Ocorrências" />
+                <div class="form-group">
+                  <label for="colhedora"> Nº Colhedora:</label>
+                  <input type="text" class="form-control" name="colhedora" placeholder="Digite nº Colhedora" />
+                </div>
+                <div class="form-group">
+                  <label for="transbordo"> Nº Transbordo:</label>
+                  <input type="text" class="form-control" name="transbordo" placeholder="Digite nº Transbordo" />
+                </div>
               </div>
-              <br>
-              <button type="submit" class="btn btn-primary">Envia Dados</button>
-            </form>
-          </div>  
-     
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="hora_saida"> Hora de saída:</label>
+                  <input type="time" class="form-control" name="hora_saida"
+                    placeholder="Informe a hora da saída Lavoura" />
+                </div>
+                <div class="form-group">
+                  <label for="fazenda">Faz/Lote:</label>
+                  <input type="text" class="form-control" name="fazenda" placeholder="Digite Faz / Lote" />
+                </div>
+                <div class="form-group">
+                  <label for="motorista"> Motorista:</label>
+                  <input type="text" class="form-control" name="motorista" placeholder="Digite Nome Motorista" />
+                </div>
+                <div class="form-group">
+                  <label for="operador1"> Operador Colhedora:</label>
+                  <input type="text" class="form-control" name="operador1" placeholder="Digite nome Op.Colhedora" />
+                </div>
+                <div class="form-group">
+                  <label for="operador2"> Operador Transbordo:</label>
+                  <input type="text" class="form-control" name="operador2" placeholder="Digite nome Op.Transbordo" />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="operacao">Tipo Operação:</label>
+                  <input type="text" class="form-control" name="operacao"
+                    placeholder="Informe o Tipo Operação (Plantio,Colheita...)" />
+                </div>
+                <div class="form-group">
+                  <label for="saida_usina">Horario Saida Usina:</label>
+                  <input type="text" class="form-control" name="saida_usina"
+                    placeholder="Informe horário de Saída da Balança" />
+                </div>
+                
+                <div class="form-group">
+                  <label for="peso">Peso da Carga</label>
+                  <input type="text" class="form-control" name="peso" placeholder=" Informe Peso Total Carga" />
+                </div>
+  
+                <div class="form-group">
+                  <label for="turno">Turno</label>
+                  <input type="text" class="form-control" name="turno" placeholder=" Informe Turno (dia,Noite)" />
+                </div>
+  
+                <div class="form-group">
+                  <label for="lider">Lider:</label>
+                  <input type="text" class="form-control" name="lider"
+                    placeholder="Digite nome Lider Carregamento e Transporte" />
+                </div>              
+              </div>
+              </div>
+            <div class="form-group">
+              <label for="informacao"> Informações Adicionais:</label>
+              <input type="text" class="form-control" name="informacao"
+                placeholder="Anotações de Informações e  Ocorrências" />
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Envia Dados</button>
+          </form>
+        </div>
+
+
 
 </body>
 
 </html>
+  
 
-
-   
 
   
 

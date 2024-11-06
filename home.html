@@ -1,128 +1,49 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-
-
-  <title>Cana Online na WEB</title>
-
-  <!-- Adicionando Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Adicionando Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
-
-
-  <?php
-  if (isset($_SESSION['msg'])) {
-    echo $_SESSION['msg'];
-    unset($_SESSION['msg']);
-  }
-
-  ?>
-
-
-
-  <style>
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 60px;
-      background-color: #198754;
-      /* Cor verde escuro */
-    }
-
-    .sidebar {
-      position: fixed;
-      top: 58px;
-      /* Altura da navbar */
-      left: 0;
-      height: calc(100vh - 58px);
-      /* Altura total - altura da navbar */
-      width: 200px;
-      padding: 10px;
-      background-color: #f8f9fa;
-      border-right: 2px solid #dee2e6;
-    }
-
-    .content {
-      margin-top: 70px;
-      /* Altura da navbar */
-      margin-left: 40px;
-      padding: 10px;
-    }
-
-    .form-group {
-      margin-bottom: 10px;
-    }
-
-
-    img {
-      width: 100%;
-      height: 100PX;
-
-
-    }
-
-    
-  </style>
- 
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Importância da Tecnologia no Campo</title>
+    <link rel="stylesheet" href="style3.css">
 </head>
-
 <body>
-
-  <center>
-
-    <h1>Cana Online - HOME</h1>
- 
-    <img src="A-tecnologia-revoluciona-o-campo.jpeg" alt="Cana Apto">
-    <width="950px">
-     
-
-    </center>
-
-    <nav class="navbar navbar-dark bg-success">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Cana Online na WEB - Soluções Inteligentes</a>
-        <a href="index.html"><i class="bi bi-pencil-square"></i></a></span>
+    <header>
+        <nav>
+           
+            <ul class="menu">
+                <li><a href="https://blog.aegro.com.br/agricultura-4-0/">Tecnologia 4.0</a></li>
+                <li><a href="https://ead.senar.org.br/">Site Senar</a></li> 
+                <li><a href="https://globorural.globo.com/opiniao/vozes-do-agro/noticia/2024/01/o-agro-e-a-tecnologia-do-campo-ao-token.ghtml">Globo Rural</a></li>
+                <li><a href="https://rehagro.com.br/blog/agricultura-4-0/">Importância da Tecnologia</a></li>             
+                <li><a href="https://www.agronoticias.com">Agro Notícias</a></li>
+                <li><a href="index.html"><i class="bi bi-pencil-square"></i>SAIR</a></li>
+            </ul>
+        </nav>
        
-      </div>
-    </nav>
-
-
-
-    
-
-
-    <script src="menu.js"></script>
-
-
-    </body>
-
-  
-   
-
-
-
-    
-  
-
-    
- 
-     
-
-
-
-  
-  
-  
-      </body>        
-    
+        <h1>Tecnologia no Campo</h1>
+    </header>
+    <main>
+        
+        <section class="content" id="importancia">
+            
+            <div class="image">
+                <img src="tecnologia01.jpg" alt="Tecnologia no campo">
+            </div>
+            <div class="text">
+                <h2>Importância da Tecnologia no Campo</h2>
+                <p>A integração da tecnologia no campo agrícola tem se mostrado essencial para alcançar maior eficiência, produtividade e sustentabilidade. Tecnologias como a Internet das Coisas (IoT), inteligência artificial e análise de dados estão revolucionando a maneira como as atividades agrícolas são conduzidas, proporcionando uma gestão mais precisa e informada.</p>
+            </div>
+        </section>
+        
+        <section class="content" id="evolucao">
+            <div class="image">
+                <img src="todas-tecnologias.png" alt="Evolução do agro">
+            </div>
+            <div class="text">
+                <h2>Evoluções do Agro ao Longo do Tempo</h2>
+                <p>Com o passar dos anos, o setor agropecuário passou por inúmeras transformações. Desde a mecanização com tratores e colheitadeiras, até a automação e o uso de drones para monitoramento de lavouras, cada avanço trouxe consigo um aumento significativo na produtividade e na eficiência. Hoje, o uso de tecnologias digitais e sistemas de gerenciamento integrado está moldando o futuro da agricultura.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
