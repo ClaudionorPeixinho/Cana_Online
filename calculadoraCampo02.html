@@ -29,15 +29,23 @@
             <label for="numBicos">Qtde. de Bicos (Esp.x0,50cm):</label>
             <input type="number" id="numBicos" name="numBicos" required>
         </div>
-
         <form id="calcForm">
             <div class="input-group">
                 <label for="velocidade">Velocidade do Trator (km/h):</label>
                 <input type="number" id="velocidade" name="velocidade" required>
-            </div>
-                     
-            
-           
+            </div>        
+        <!-- Novos inputs -->
+        <div class="input-group">
+            <label for="numeroRA">Número RA:</label>
+            <input type="text" id="numeroRA" name="numeroRA" required>
+        </div>
+
+        <div class="input-group">
+            <label for="fazendaLote">Fazenda/Lote:</label>
+            <input type="text" id="fazendaLote" name="fazendaLote" required>
+        </div>
+
+        
             <button type="button" onclick="calcular()">Calcular</button>
         </form>
         <h4>RESULTADO</h4>
@@ -46,3 +54,6 @@
     <script src="./JS/script.js"></script>
 </body>
 </html>
+        
+           
+    
