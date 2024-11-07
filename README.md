@@ -5,11 +5,6 @@
 ![Layout Abertura](https://github.com/user-attachments/assets/ac242d67-1a15-404d-acb8-bbb8372e8ed6)
 
 
-- Analise de Dados (Power BI)
-
-![Power bi](https://github.com/user-attachments/assets/8691d1b4-3019-4053-af80-d3176f74ce2f)
-
-
 - Ponto Digital
 
 ![Ponto Digital](https://github.com/user-attachments/assets/4933abe4-cc8e-406b-b03e-f77df1fc94d8)
@@ -30,6 +25,11 @@
   - Tela de Cadastro de Equipamentos 
 
 ![Equipamentos](https://github.com/user-attachments/assets/349a9b6b-248a-4c16-8633-f35431fc69f5)
+
+
+- Analise de Dados (Power BI)
+
+![Power bi](https://github.com/user-attachments/assets/8691d1b4-3019-4053-af80-d3176f74ce2f)
 
 
 
