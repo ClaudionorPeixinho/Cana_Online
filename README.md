@@ -1,4 +1,4 @@
-# Cana_Online
+# Cana_Online na Web - Soluções Inteligentes
 
 ![foto](https://github.com/user-attachments/assets/b6266002-a071-4dbe-9c23-40492e8e3c72)
 
