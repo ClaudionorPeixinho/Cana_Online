@@ -1,5 +1,8 @@
 # Cana_Online
 
+![foto](https://github.com/user-attachments/assets/b6266002-a071-4dbe-9c23-40492e8e3c72)
+
+
 - Novo Layout - Segunda Atualização ( Agosto/2024)
 
 ![Layout Abertura](https://github.com/user-attachments/assets/ac242d67-1a15-404d-acb8-bbb8372e8ed6)
@@ -44,7 +47,7 @@ Banco de Dados MysqlWorkbench
 
 
 
-![foto](https://github.com/user-attachments/assets/b6266002-a071-4dbe-9c23-40492e8e3c72)
+
 
 
 
