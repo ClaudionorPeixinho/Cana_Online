@@ -1,7 +1,6 @@
 # Cana_Online na Web - Soluções Inteligentes
 
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/be0dd604-1191-4fca-a0e2-2807d396a1ca/deploy-status)](https://app.netlify.com/sites/canaonlinewebsite/deploys)
+https://canaonlinewebsite.netlify.app/
 
 
 ![foto](https://github.com/user-attachments/assets/b6266002-a071-4dbe-9c23-40492e8e3c72)
