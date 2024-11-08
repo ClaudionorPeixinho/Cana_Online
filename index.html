@@ -20,8 +20,8 @@
             text-align: center;
         }
         .navbar {
-            width: 280px;
-            background-color: #2e8b57; /* Verde escuro */
+            width: 325px;
+            background-color:  #176240; /* Verde escuro */
             position: fixed;
             height: 100%;
             overflow: auto;
@@ -49,11 +49,11 @@
             display: none;
         }
         .navbar a:hover, .dropdown-btn:hover {
-            background-color: #3a9d70;
+            background-color: #34a573;
         }
         .dropdown-container {
             display: none;
-            background-color: #3a9d70;
+            background-color: #298058;
             padding-left: 6px;
         }
         .content {
@@ -64,9 +64,13 @@
             height: 5px;
         }
         .content img {
-            width: 100%;
-            height: auto;
-        }
+    width: 92%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: 0; /* Alinhar à direita */
+}
+
         .content.closed {
             margin-left: 60px;
         }
@@ -74,7 +78,7 @@
             cursor: pointer;
             padding: 15px;
             font-size: 20px;
-            background-color: #2e8b57;
+            background-color:  #3a9d70;
             color: white;
             border: none;
             width: auto%;
@@ -85,6 +89,7 @@
 </head>
 <body>
     <button class="btn-expandir" onclick="toggleNavbar()">☰ Menu</button>
+
     <div class="navbar" id="navbar">
         <a href="home.html"><i class="bi bi-card-list icon"></i> <span class="txt-link">Home</span></a>
         <button class="dropdown-btn"><i class="bi bi-display icon"></i> <span class="txt-link">Ponto Digital</span>
@@ -136,6 +141,11 @@
             <a href="https://servicos.decea.mil.br/sarpas/?i=AppSec">- Plano de Vôo (DECEA)</a>
             <a href="#">- Site Mapa (Relatórios)</a>
             <a href="https://fm.xarvio.com/br/pt_br/login">- Plataforma Xarvio</a>
+        </div>
+        <button class="dropdown-btn"> <i class="bi bi-gear"></i> <span class="txt-link">Configurações</span> <i class="fa fa-caret-down"></i> </button>
+        </button>
+        <div class="dropdown-container">
+            <a href="configuracao.html">Painel</a>    
         </div>
         
         <a href="#" class="btn-sair" onclick="sair()">

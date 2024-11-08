@@ -33,8 +33,8 @@ hr{
 
 input{
 
-    padding: 10px;
-    font-size: 22px;
+    padding: 8px;
+    font-size: 18px;
 
 }
 
@@ -79,7 +79,7 @@ th{background-color: greenyellow;}
 
   <div class="pesquisar">
     <form action="" method="POST">
-    <a href="index.html">Tela Cadastro</a>
+   
     <p> Pesquisar: <input type="text" name= "pesquisar" size="40">
     <input class="Entrar" type="submit"  value="Entrar">
       </p>

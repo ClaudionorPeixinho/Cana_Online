@@ -14,7 +14,7 @@
         .pesquisar {
 
             width: 100%;
-            height: 85 px;
+            height: 80 px;
             background-color: green;
 
         }
@@ -35,8 +35,8 @@
         input {
 
 
-            padding: 15px;
-            font-size: 22px;
+            padding: 8px;
+            font-size: 18px;
 
         }
 
@@ -89,14 +89,16 @@
         <form action="" method="POST">
             <p> Pesquisar: <input type="text" name="pesquisar" size="40">
                 <input class="Entrar" type="submit" value="Entrar">
+                                
             </p>
+          
         </form>
 
     </div>
     <hr>
-    <a href="index.html">Tela Cadastro</a>
+    <a href="index.html"> Tela Cadastro</a>
     <br>
-    <a href="Consultar_Equipamentos.php"> Pesquisar Equipamentos</a>
+    <a href="Consultar_Equipamentos.php">Pesquisar Equipamentos</a>
 
     <?php
     $conexao = mysqli_connect('localhost', 'root', '', 'canaonline');

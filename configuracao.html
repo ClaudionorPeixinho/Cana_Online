@@ -1,10 +1,5 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -41,8 +36,17 @@ session_start();
       /* Altura total - altura da navbar */
       width: 200px;
       padding: 10px;
-      background-color: #f8f9fa;
-      border-right: 2px solid #dee2e6;
+      background-color: #f3f8f6;
+      /* Cor preta */
+      border-right: 2px solid #989393d2;
+    }
+
+    .sidebar h4, .sidebar .nav-link {
+      color: #080808;
+    }
+
+    .sidebar .nav-link:hover {
+      background-color: #5e9a51df;
     }
 
     .content {
@@ -56,16 +60,15 @@ session_start();
       margin-bottom: 15px;
     }
   </style>
-
 </head>
 
 <body>
-
   <!-- Navbar -->
   <nav class="navbar navbar-dark bg-success">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><i class="bi bi-gear"></i> Cana Online na WEB - Soluções Inteligentes</a>
-      <a href="index.html" class="btn btn-outline-light"><i class="bi bi-pencil-square"></i> Editar</a>
+      <a href="configuracao.html" class="btn btn-outline-light"><i class="bi bi-gear"></i>Configuração</a>
+      
     </div>
   </nav>
 
@@ -83,7 +86,7 @@ session_start();
         <a class="nav-link" href="#"><i class="bi bi-gear"></i> Configurações</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><i class="bi bi-box-arrow-right"></i> Sair</a>
+        <a class="nav-link" href="index.html"><i class="bi bi-box-arrow-right"></i> Sair</a>
       </li>
     </ul>
   </div>
@@ -132,9 +135,9 @@ session_start();
           </div>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Salvar Configurações</button>
+      <button type="button" class="btn btn-primary"><i class="bi bi-save"></i> Salvar Configurações</button>
       <button type="reset" class="btn btn-secondary"><i class="bi bi-x-circle"></i> Cancelar</button>
-      <a href="sair.php" class="btn btn-light"><i class="bi bi-box-arrow-right"></i> Sair</a>
+     
     </form>
   </div>
 

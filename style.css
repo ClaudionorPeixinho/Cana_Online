@@ -19,7 +19,7 @@
     nav.menu-lateral{
         width: 80px;
         height: 100%;
-        background-color: #07420f;
+        background-color: #89c991;
         padding: 40px 0 40px 1%;
         box-shadow: 6px 0 0 #699780;
        
@@ -65,7 +65,7 @@
     }
 
     ul li.ativo{
-        background-color: #1d811d;
+        background-color: #1a420cc9;
 
     }
 
@@ -153,7 +153,7 @@
 }
 
 .item-menu a:hover {
-    background-color: #3d9632;
+    background-color: #b7d6b2;
 }
    
 
@@ -166,7 +166,7 @@
     position: absolute;
     left: 102%;
     top: 0;
-    background-color: #1c5f1c;
+    background-color: #87cd87e0;
     min-width: 200px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
@@ -182,7 +182,7 @@
 }
 
 .menu-lateral ul ul.submenu a:hover {
-    background-color: #46b11c;
+    background-color:#86dfa1;
     
    
 }
@@ -197,11 +197,11 @@
     font-size: 25px;
     cursor: pointer;
     color: white;
-    background-color: #145a29;
+    background-color: #6fd08c;
     text-align: left;
 }
 
 .btn-expandir:hover {
-    background-color: #40972d;
+    background-color: #65b27c;
 }
   
