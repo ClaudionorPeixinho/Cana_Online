@@ -16,31 +16,19 @@
             height: 60px;
             background-color: #198754; /* Cor verde escuro */
         }
-        .sidebar {
-            position: fixed;
-            top: 58px; /* Altura da navbar */
-            left: 0;
-            height: calc(100vh - 58px); /* Altura total - altura da navbar */
-            width: 200px;
-            padding: 10px;
-            background-color: #f8f9fa;
-            border-right: 2px solid #dee2e6;
-        }
         .content {
             margin-top: 70px; /* Altura da navbar */
-            margin-left: 60px; /* Largura da sidebar */
             padding: 10px;
         }
         .form-group {
             margin-bottom: 10px;
         }
         .form-control {
-            width: 70%; /* Padronizando o tamanho dos inputs */
-            width: 70%; /* Padronizando o tamanho dos inputs */
+            width: 100%; /* Padronizando o tamanho dos inputs */
         }
         img {
             width: 100%;
-            height: 100px;
+            height: auto;
         }
         .btn-cadastrar {
             background-color: #198754;
@@ -52,7 +40,7 @@
             cursor: pointer;
         }
         .btn-cadastrar:hover {
-            background-color: #198754;
+            background-color: rgb(149, 192, 149);
         }
         .btn-cancelar {
             background-color: rgb(114, 106, 106);
@@ -85,7 +73,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><i class="bi bi-house-door"></i> Cana Online na WEB - Soluções Inteligentes</a>
             <a href="index.html" class="btn btn-outline-light"><i class="bi bi-box-arrow-right"></i> Sair</a>
-       
+        </div>
     </nav>
     <div class="content">
         <div id="operadorForm" style="display: block">
@@ -93,9 +81,8 @@
             <h2><i class="bi bi-person"></i> Cadastro Colaboradores</h2>
             <form method="POST" action="processa2.php">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-12">
                         <div class="form-group">
-                            <br>
                             <label for="matricula"><i class="bi bi-card-list"></i> Nº Matricula:</label>
                             <input type="text" class="form-control" name="matricula" placeholder="Digite a Matricula" />
                         </div>
@@ -108,9 +95,8 @@
                             <input type="text" class="form-control" name="funcao" placeholder="Digite a Função Colaborador" />
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-12">
                         <div class="form-group">
-                            <br>
                             <label for="nome"><i class="bi bi-person"></i> Nome do Colaborador:</label>
                             <input type="text" class="form-control" name="nome" placeholder="Digite nome do Colaborador" />
                         </div>
@@ -140,3 +126,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
+

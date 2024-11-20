@@ -7,11 +7,10 @@
 
   <title>Cana Online na WEB</title>
 
- <!-- Adicionando Bootstrap CSS -->
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
- <!-- Adicionando Bootstrap Icons -->
- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
-
+  <!-- Adicionando Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Adicionando Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
 
   <?php
   if (isset($_SESSION['msg'])) {
@@ -46,7 +45,8 @@
     .content {
       margin-top: 70px;
       /* Altura da navbar */
-      margin-left: 40px;
+      margin-left: 200px;
+      /* Largura da sidebar */
       padding: 10px;
     }
 
@@ -58,12 +58,27 @@
       width: 100%;
       height: 100px;
     }
-  </style>
 
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+      }
+
+      .content {
+        margin-left: 0;
+      }
+
+      .navbar {
+        position: relative;
+      }
+    }
+  </style>
 </head>
 
 <body>
-
   <form method="POST" action="processa4.php">
 
     <!-- Navbar -->
@@ -71,10 +86,9 @@
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <i class="bi bi-building"></i> Cana Online na WEB - Soluções Inteligentes
-          <a href="index.html" class="btn btn-outline-light"><i class="bi bi-box-arrow-right"></i> Sair</a>
-        </a>           
+        </a>
+        <a href="index.html" class="btn btn-outline-light"><i class="bi bi-box-arrow-right"></i> Sair</a>
       </div>
-      
     </nav>
 
     <!-- Conteúdo da Página -->
@@ -82,89 +96,76 @@
       <div id="pontoForm" style="display: block">
         <h2><i class="bi bi-clock"></i> Ponto Digital</h2>
         <br>
-        <form>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="data_lancamento"><i class="bi bi-calendar"></i> Data Lançamento:</label>
-                <input type="date" class="form-control" name="data_lancamento" placeholder="Digite a data da Lançamento" />
-              </div>
-
-              <div class="form-group">
-                <label for="colaborador"><i class="bi bi-person"></i> Nome Colaborador:</label>
-                <input type="text" class="form-control" name="colaborador" placeholder="Informe o nome Colaborador" />
-              </div>
-
-              <div class="form-group">
-                <label for="frota"><i class="bi bi-truck"></i> Nº Frota:</label>
-                <a href="Consultar_Equipamentos.php">Consultar Equipamentos</a>
-                <input type="text" class="form-control" name="frota" placeholder="Digite nº de Frota" />
-              </div>
-
-              <div class="form-group">
-                <label for="fazenda_lote"><i class="bi bi-tree"></i> Fazenda/Lote</label>
-                <input type="text" class="form-control" name="fazenda_lote" placeholder="Informe Fazenda ou Lote" />
-              </div>
+        <div class="row">
+          <div class="col-md-4 col-sm-6">
+            <div class="form-group">
+              <label for="data_lancamento"><i class="bi bi-calendar"></i> Data Lançamento:</label>
+              <input type="date" class="form-control" name="data_lancamento" placeholder="Digite a data da Lançamento" />
             </div>
-
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="hi_Jornada"><i class="bi bi-clock-history"></i> Hora Inicial Jornada:</label>
-                <input type="time" class="form-control" name="hi_jornada" placeholder="Informe a hora inicial Jornada" />
-              </div>
-
-              <div class="form-group">
-                <label for="matricula"><i class="bi bi-card-text"></i> Matricula:</label>
-                <input type="text" class="form-control" name="matricula" placeholder="Digite a matrícula do Colaborador" />
-              </div>
-
-              <div class="form-group">
-                <label for="kmI"><i class="bi bi-speedometer2"></i> Km Inicial:</label>
-                <input type="text" class="form-control" name="kmi" placeholder="Digite Km Inicial do Veículo" />
-              </div>
-
-              <div class="form-group">
-                <label for="turno"><i class="bi bi-clock-fill"></i> Turno:</label>
-                <input type="text" class="form-control" name="turno" placeholder="Informe o Turno de Trabalho" />
-              </div>
+            <div class="form-group">
+              <label for="colaborador"><i class="bi bi-person"></i> Nome Colaborador:</label>
+              <input type="text" class="form-control" name="colaborador" placeholder="Informe o nome Colaborador" />
             </div>
-
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="hf_jornada"><i class="bi bi-clock"></i> Hora Final Jornada:</label>
-                <input type="time" class="form-control" name="hf_jornada" placeholder="Informe a hora da Final Jornada" />
-              </div>
-
-              <div class="form-group">
-                <label for="funcao"><i class="bi bi-briefcase"></i> Função:</label>
-                <input type="text" class="form-control" name="funcao" placeholder="Informe a função Colaborador" />
-              </div>
-
-              <div class="form-group">
-                <label for="kmf"><i class="bi bi-speedometer"></i> Km Final:</label>
-                <input type="text" class="form-control" name="kmf" placeholder="Digite o Km Final do Veículo" />
-              </div>
-
-              <div class="form-group">
-                <label for="lider"><i class="bi bi-person-badge"></i> Lider da Frente</label>
-                <input type="text" class="form-control" name="lider" placeholder="Informe nome do Lider" />
-              </div>
+            <div class="form-group">
+              <label for="frota"><i class="bi bi-truck"></i> Nº Frota:</label>
+              <a href="Consultar_Equipamentos.php">Consultar Equipamentos</a>
+              <input type="text" class="form-control" name="frota" placeholder="Digite nº de Frota" />
+            </div>
+            <div class="form-group">
+              <label for="fazenda_lote"><i class="bi bi-tree"></i> Fazenda/Lote</label>
+              <input type="text" class="form-control" name="fazenda_lote" placeholder="Informe Fazenda ou Lote" />
             </div>
           </div>
-          <br>
-
-          <div class="form-group">
-            <label for="informacao"><i class="bi bi-info-circle"></i> Informações Adicionais:</label>
-            <input type="text" class="form-control" name="informacao" placeholder="Anotações de Informações e Ocorrências" />
+          <div class="col-md-4 col-sm-6">
+            <div class="form-group">
+              <label for="hi_Jornada"><i class="bi bi-clock-history"></i> Hora Inicial Jornada:</label>
+              <input type="time" class="form-control" name="hi_jornada" placeholder="Informe a hora inicial Jornada" />
+            </div>
+            <div class="form-group">
+              <label for="matricula"><i class="bi bi-card-text"></i> Matricula:</label>
+              <input type="text" class="form-control" name="matricula" placeholder="Digite a matrícula do Colaborador" />
+            </div>
+            <div class="form-group">
+              <label for="kmI"><i class="bi bi-speedometer2"></i> Km Inicial:</label>
+              <input type="text" class="form-control" name="kmi" placeholder="Digite Km Inicial do Veículo" />
+            </div>
+            <div class="form-group">
+              <label for="turno"><i class="bi bi-clock-fill"></i> Turno:</label>
+              <input type="text" class="form-control" name="turno" placeholder="Informe o Turno de Trabalho" />
+            </div>
           </div>
-          <br>
-          <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Registrar Ponto</button>
-          <button type="index.html" class="btn btn-secondary"><i class="bi bi-x-circle"></i> Cancelar</button>
-          
-        </form>
+          <div class="col-md-4 col-sm-12">
+            <div class="form-group">
+              <label for="hf_jornada"><i class="bi bi-clock"></i> Hora Final Jornada:</label>
+              <input type="time" class="form-control" name="hf_jornada" placeholder="Informe a hora da Final Jornada" />
+            </div>
+            <div class="form-group">
+              <label for="funcao"><i class="bi bi-briefcase"></i> Função:</label>
+              <input type="text" class="form-control" name="funcao" placeholder="Informe a função Colaborador" />
+            </div>
+            <div class="form-group">
+              <label for="kmf"><i class="bi bi-speedometer"></i> Km Final:</label>
+              <input type="text" class="form-control" name="kmf" placeholder="Digite o Km Final do Veículo" />
+            </div>
+            <div class="form-group">
+              <label for="lider"><i class="bi bi-person-badge"></i> Lider da Frente</label>
+              <input type="text" class="form-control" name="lider" placeholder="Informe nome do Lider" />
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="informacao"><i class="bi bi-info-circle"></i> Informações Adicionais:</label>
+          <input type="text" class="form-control" name="informacao" placeholder="Anotações de Informações e Ocorrências" />
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Registrar Ponto</button>
+        <button type="button" class="btn btn-secondary"><i class="bi bi-x-circle"></i> Cancelar</button>
       </div>
     </div>
   </form>
+  <!-- Adicionando Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
-
 </html>

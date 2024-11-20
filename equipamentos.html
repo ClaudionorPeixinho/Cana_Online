@@ -34,7 +34,6 @@
         }
         .content {
             margin-top: 70px; /* Altura da navbar */
-            margin-left: 60px; /* Largura da sidebar */
             padding: 10px;
         }
         .form-group {
@@ -84,6 +83,20 @@
         .btn-cancelar:hover {
             background-color: rgb(203, 172, 172);
         }
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                top: 0;
+            }
+            .content {
+                margin-left: 0;
+            }
+            .navbar {
+                position: relative;
+            }
+        }
     </style>
 </head>
 <body>
@@ -91,7 +104,6 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Cana Online na WEB - Soluções Inteligentes</a>
             <a href="index.html" class="btn btn-outline-light"><i class="bi bi-box-arrow-right"></i> Sair</a>
-            </a>
         </div>
     </nav>
     
@@ -103,7 +115,7 @@
             <br>
             <form method="POST" action="processa3.php">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-12">
                         <div class="form-group">
                             <label for="frota"><i class="bi bi-truck"></i> Nº Frota:</label>
                             <input type="text" class="form-control" name="frota" placeholder="Digite a Frota" />
@@ -117,7 +129,7 @@
                             <input type="text" class="form-control" name="operacao" placeholder="Informe a Operação (Transporte, Colheita)" />
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-12">
                         <div class="form-group">
                             <label for="tag"><i class="bi bi-tag"></i> Nº Tag (dados):</label>
                             <input type="text" class="form-control" name="tag" placeholder="Informe o nº Tag Coleta dados" />

@@ -24,20 +24,16 @@
       width: 100%;
       height: 60px;
       background-color: #198754;
-      /* Cor verde escuro */
     }
 
     .sidebar {
       position: fixed;
       top: 58px;
-      /* Altura da navbar */
       left: 0;
       height: calc(100vh - 58px);
-      /* Altura total - altura da navbar */
       width: 200px;
       padding: 10px;
       background-color: #f3f8f6;
-      /* Cor preta */
       border-right: 2px solid #989393d2;
     }
 
@@ -51,13 +47,29 @@
 
     .content {
       margin-top: 70px;
-      /* Altura da navbar */
       margin-left: 220px;
       padding: 20px;
     }
 
     .form-group {
       margin-bottom: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+      }
+
+      .content {
+        margin-left: 0;
+      }
+
+      .navbar {
+        position: relative;
+      }
     }
   </style>
 </head>
@@ -68,7 +80,6 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><i class="bi bi-gear"></i> Cana Online na WEB - Soluções Inteligentes</a>
       <a href="configuracao.html" class="btn btn-outline-light"><i class="bi bi-gear"></i>Configuração</a>
-      
     </div>
   </nav>
 
@@ -96,7 +107,7 @@
     <h2>Configurações</h2>
     <form method="POST" action="processa_configuracao.php">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 col-sm-12">
           <div class="form-group">
             <label for="username"><i class="bi bi-person"></i> Nome de Usuário:</label>
             <input type="text" class="form-control" id="username" name="username" placeholder="Digite seu nome de usuário">
@@ -110,7 +121,7 @@
             <input type="password" class="form-control" id="password" name="password" placeholder="Digite sua senha">
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 col-sm-12">
           <div class="form-group">
             <label for="theme"><i class="bi bi-palette"></i> Tema:</label>
             <select class="form-select" id="theme" name="theme">
@@ -135,11 +146,13 @@
           </div>
         </div>
       </div>
-      <button type="button" class="btn btn-primary"><i class="bi bi-save"></i> Salvar Configurações</button>
+      <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Salvar Configurações</button>
       <button type="reset" class="btn btn-secondary"><i class="bi bi-x-circle"></i> Cancelar</button>
-     
     </form>
   </div>
 
+  <!-- Adicionando Bootstrap JS e dependências Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

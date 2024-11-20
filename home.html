@@ -5,27 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Importância da Tecnologia no Campo</title>
     <link rel="stylesheet" href="style3.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0.5rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            padding: 1rem;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        .content .image, .content .text {
+            flex: 1 1 100%;
+        }
+        .content .image img {
+            width: 100%;
+            height: auto;
+        }
+        @media(min-width: 768px) {
+            .content .image, .content .text {
+                flex: 1;
+            }
+            .content .image {
+                order: 1;
+            }
+            .content .text {
+                order: 2;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
-           
             <ul class="menu">
                 <li><a href="https://blog.aegro.com.br/agricultura-4-0/">Tecnologia 4.0</a></li>
                 <li><a href="https://ead.senar.org.br/">Site Senar</a></li> 
                 <li><a href="https://globorural.globo.com/opiniao/vozes-do-agro/noticia/2024/01/o-agro-e-a-tecnologia-do-campo-ao-token.ghtml">Globo Rural</a></li>
                 <li><a href="https://rehagro.com.br/blog/agricultura-4-0/">Importância da Tecnologia</a></li>             
                 <li><a href="https://www.agronoticias.com">Agro Notícias</a></li>
-                <li><a href="index.html" class="btn btn-outline-light"><i class="bi bi-box-arrow-right"></i> Sair</a>
+                <li><a href="index.html" class="btn btn-outline-light"><i class="bi bi-box-arrow-right"></i> Sair</a></li>
             </ul>
         </nav>
-       
         <h1>Tecnologia no Campo</h1>
     </header>
     <main>
-        
         <section class="content" id="importancia">
-            
             <div class="image">
                 <img src="tecnologia01.jpg" alt="Tecnologia no campo">
             </div>
@@ -34,7 +83,6 @@
                 <p>A integração da tecnologia no campo agrícola tem se mostrado essencial para alcançar maior eficiência, produtividade e sustentabilidade. Tecnologias como a Internet das Coisas (IoT), inteligência artificial e análise de dados estão revolucionando a maneira como as atividades agrícolas são conduzidas, proporcionando uma gestão mais precisa e informada.</p>
             </div>
         </section>
-        
         <section class="content" id="evolucao">
             <div class="image">
                 <img src="todas-tecnologias.png" alt="Evolução do agro">
